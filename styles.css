@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+/* General Section Styling */
+#about {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  #about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  /* Underline Effect for Title */
+  #about h2::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background-color: #ff6347;
+    display: block;
+    margin: 0.5rem auto 0;
+  }
+  
+  /* Paragraph Styling */
+  #about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Emphasis on Key Points */
+  #about p strong {
+    color: #ff6347;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #about h2 {
+      font-size: 2rem;
+    }
+  
+    #about p {
+      font-size: 1rem;
+    }
+  }
+  
