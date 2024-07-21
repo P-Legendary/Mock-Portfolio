@@ -82,6 +82,14 @@ footer {
   }
   
   /* Underline Effect for Title */
+  #about h2::before {
+    content: '*';
+    width: 100px;
+    height: 4px;
+    background-color: #ff6347;
+    display: block;
+    margin: 0.5rem auto 0;
+  }
   #about h2::after {
     content: '';
     width: 100px;
