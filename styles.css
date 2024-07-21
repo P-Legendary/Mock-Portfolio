@@ -33,6 +33,27 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
 }
+section ul{
+  list-style-type:square;
+}
+section ul li img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-left: 200px;
+  top: 50px;
+}
+section ul li img:hover{
+  border: solid gold 2px;
+}
+section ul li a{
+  font-size: x-large;
+  text-decoration: none;
+}
+section ul li a:hover {
+  font-size: xx-large;
+  text-decoration: line-through;
+}
 
 section {
   padding: 2rem;
