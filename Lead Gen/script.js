@@ -5,15 +5,19 @@ document.getElementById('search-button').addEventListener('click', function() {
     }
 });
 
-function searchBusinesses(query) {
-    const clientId = 'YOUR_CLIENT_ID';
-    const clientSecret = 'YOUR_CLIENT_SECRET';
-    const url = `https://api.foursquare.com/v2/venues/search?near=${query}&client_id=${clientId}&client_secret=${clientSecret}&v=20210731`;
+async function searchBusinesses(query) {
+    const url = `/api/search?query=${encodeURIComponent(query)}`;
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => displayResults(data.response.venues))
-        .catch(error => console.error('Error:', error));
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        displayResults(data.response.venues);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 
 function displayResults(venues) {
@@ -28,7 +32,7 @@ function displayResults(venues) {
     venues.forEach(venue => {
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item');
-        resultItem.innerHTML = `<h3>${venue.name}</h3><p>${venue.location.address}</p>`;
+        resultItem.innerHTML = `<h3>${venue.name}</h3><p>${venue.location.address || 'No address available'}</p>`;
         resultsContainer.appendChild(resultItem);
     });
 }
